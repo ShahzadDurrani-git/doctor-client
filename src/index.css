@@ -31,7 +31,8 @@ code {
 }
 
 .bg--active {
-  background: #256d85;
+  /* background: #256d85; */
+  background: #000;
 }
 
 .button--main--color {
@@ -145,7 +146,12 @@ code {
   display: flex;
   flex-direction: column;
 }
-
+#mail_subject{
+  border:1px solid lightgray;
+}
+.ql-container, .ql-editor{
+  min-height: 200px;
+}
 
 
 

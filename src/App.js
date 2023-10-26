@@ -10,6 +10,7 @@ import SocketClient from "./socket-client";
 import AddDoctor from "./components/AddDoctor";
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import ComposeEmail from "./components/ComposeEmail";
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
         <Route path="/chat" element={<Chat />} />
         <Route path="/concurrent-calls" element={<ConcurrentCalls />} />
         <Route path="/setting" element={<Setting />} />
-        <Route path="/socket" element={<SocketClient  />} />
+        <Route path="/email" element={<ComposeEmail />} />
       </Routes>
     </BrowserRouter>
   );

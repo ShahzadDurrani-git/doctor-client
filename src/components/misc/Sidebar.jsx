@@ -2,6 +2,7 @@ import React from "react";
 import Heading from "./Heading";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import EmailComposePage from "./SendEmail";
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const Sidebar = () => {
 
   var addDoctor = false;
   var group = false;
+  var email = false;
   var setting = false;
 
   console.log(window.location.origin);
@@ -42,13 +44,16 @@ const Sidebar = () => {
   if (pathSegments.includes("concurrent-calls")) {
     setting = true;
   }
+  if (pathSegments.includes("email")) {
+    email = true;
+  }
 
   return (
     <div className="p-5 flex flex-col justify-between h-screen">
       <div>
-        <div className="logo flex items-center gap-2">
-          <img src={icons[0]} className="w-1/3" />
-          <h1 className="sidebar__main__heading">Sales</h1>
+        <div className="logo flex items-center gap-2" onClick={() => {navigate("/")}}>
+          {/* <img src={icons[0]} className="w-1/3" /> */}
+          <h1 className="sidebar__main__heading bg-black text-white pl-5 pr-5 ">Marketing</h1>
         </div>
         <Heading text={"Main Menu"} />
         <div
@@ -69,7 +74,7 @@ const Sidebar = () => {
             lastSegment == 'group-details' ? <Button text='Details' icon={icons[2]} active my /> : <Button text='Details' icon={icons[2]} my />
           }
         </div> */}
-        <div
+        {/* <div
           onClick={() => {
             navigate("/add-doctor");
           }}
@@ -78,6 +83,17 @@ const Sidebar = () => {
             <Button text="Add Doctor" icon={icons[3]} my active />
           ) : (
             <Button text="Add Doctor" icon={icons[3]} my />
+          )}
+        </div> */}
+        <div
+          onClick={() => {
+            navigate("/email");
+          }}
+        >
+          {email ? (
+            <Button text="Compose Email" icon={icons[2]} my active />
+          ) : (
+            <Button text="Compose Email" icon={icons[2]} my />
           )}
         </div>
         {/* <Button text="Notification" icon={icons[4]} my /> */}

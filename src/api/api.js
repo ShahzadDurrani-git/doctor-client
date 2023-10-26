@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const apiUrl = 'http://localhost:9000'; // Update with your server URL
+// const apiUrl = 'https://naughty-lime-stole.cyclic.app';
+const apiUrl = 'http://localhost:9000';
 
 const api = axios.create({
   baseURL: apiUrl,
